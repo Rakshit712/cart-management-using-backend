@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk('auth/login', async (data) => {
     try {
         // console.log(data);
 
-        let response = await axios.post("http://localhost:8000/api/login", data);
+        let response = await axios.post("https://cart-management-using-backend-1.onrender.com/api/login", data);
         console.log( response.data) ;
         return  response.data;
         
@@ -21,7 +21,7 @@ export const loginUser = createAsyncThunk('auth/login', async (data) => {
 
 export const signUp = createAsyncThunk('auth/signup', async (data) => {
     try {
-        let res = await axios.post("http://localhost:8000/api/signup", data)
+        let res = await axios.post("https://cart-management-using-backend-1.onrender.com/api/signup", data)
         console.log(res)
         return res.data;
 

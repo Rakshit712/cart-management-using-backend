@@ -5,7 +5,7 @@ export const fetchProducts = createAsyncThunk(
     "cart/fetchProducts",
     async () => {
         try {
-            let res = await axios.get("http://localhost:8000/api/posts");
+            let res = await axios.get("https://cart-management-using-backend-1.onrender.com/api/posts");
             console.log(res.data);
             return res.data;
 
