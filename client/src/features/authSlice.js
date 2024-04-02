@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk('auth/login', async (data) => {
     try {
         // console.log(data);
 
-        let response = await axios.post("http://localhost:8000/api/login", data);
+        let response = await axios.post("https://cart-management-using-backend-1.onrender.com/api/login", data);
         console.log( response.data) ;
         return  response.data;
         
