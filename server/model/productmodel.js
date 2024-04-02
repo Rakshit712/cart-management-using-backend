@@ -1,6 +1,5 @@
 const mongoose  = require("mongoose")
 
-
 const productSchema = mongoose.Schema({
    id :{
     type:Number,
@@ -22,6 +21,9 @@ const productSchema = mongoose.Schema({
    quantity:{
     type : Number,
     default :1
+   }, catagory :{
+      type : Array,
+
    }
 })
 

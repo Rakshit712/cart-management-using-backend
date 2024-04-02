@@ -1,5 +1,6 @@
 const userModel = require("../model/usermodel")
 const productModel = require("../model/productmodel");
+const jwt = require("jsonwebtoken");
 
 async function signUp(req, res) {
     const { username, email, password } = req.body;
@@ -35,11 +36,17 @@ async function login(req, res) {
     const {  email, password } = req.body;
     console.log(req.body);
     try {
+        
         if (!email || !password) return res.status(400).send({ error: "Missing data" });
 //check the user in database
         let user = await userModel.findOne({  email: email,
         password:password });
         console.log(user);
+        // const accessToken = jwt.sign({
+        //     id: user._id,
+        //     isAdmin:user.isAdmin,
+        //   },process.env.SECRET_KEY,{ expiresIn: '3d'
+        // })
         if (user) return res.status(200).send("Login successful" );
         else return res.status(401).send( 'Wrong credentials.');
 
